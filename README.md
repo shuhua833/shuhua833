@@ -1,2 +1,2 @@
-Anneyeong haseyo
+Anneyeong-haseyo
 I am Swechha.
