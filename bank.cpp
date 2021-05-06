@@ -53,6 +53,10 @@ void cur_acc:: deposit()
         cin >> amt;
         balance = balance + amt;
     }
+    void cur_acc::show_deposit()
+    {
+    	cout<<"balance is "<<balance;
+	}
     //end of second derived class
 class sav_acc:public account
 {
@@ -61,8 +65,19 @@ class sav_acc:public account
 		void withdrawal();///////////////////////////withdrawal
 	
 };
+void sav_acc::CI(){
+	float time,rate,p;
+	cout<<"enter the amount";
+	cin>>p;
+	cout<<"enter time and rate";
+	cin>>time;
+	cin>>rate;
+	float interest=(p*time*rate)/100;
+	cout<<"interest ="<<interest;
+	
+}
 
-void withdrawal()
+void sav_acc:: withdrawal()
     {
         long amt;
         cout << "Enter Amount U want to withdraw? ";
@@ -77,6 +92,7 @@ int main()
 {
 	cur_acc cur_acc_obj;
 	sav_acc sav_acc_obj;
+	char ch;
 	do
 	{
 		system("cls");
@@ -95,7 +111,7 @@ int main()
 			cur_acc_obj.deposit();
 			break;
 		case '1':
-		  
+		  cur_acc_obj.show_deposit();
 		  
 			break;
 		case '3':
@@ -110,6 +126,6 @@ int main()
 			break;
 		 default :cout<<"\a";
 		}
-	
-	
+		while(ch!='6');
+}
 }
